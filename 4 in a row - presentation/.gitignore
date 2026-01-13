@@ -1,5 +1,5 @@
-.exe
-.dat
-.sln
-.vcxproj
-.vcxproj.filters
+*.exe
+*.dat
+*.sln
+*.vcxproj
+*.vcxproj.filters
