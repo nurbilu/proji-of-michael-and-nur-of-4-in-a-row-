@@ -1,20 +1,17 @@
 # AI Tools Usage Documentation
 
-## תיעוד שימוש בכלי AI
-
 This document describes how AI tools were used in the development of this Connect Four project.
 
 ---
 
-## כלי AI שבהם נעשה שימוש
+## AI Tools Used
 
 ### 1. Claude (Cursor IDE)
-- **מטרה**: עזרה בתכנון ופיתוח הפרויקט
 - **Purpose**: Help with project planning and development
 
 ---
 
-## דוגמאות לפניות וקבלת עזרה
+## Examples of Questions and Assistance
 
 ### Example 1: Project Structure Planning
 
@@ -51,9 +48,7 @@ This document describes how AI tools were used in the development of this Connec
 
 ---
 
-## חלקים בקוד שנכתבו בעזרת AI
-
-### Parts written with AI assistance:
+## Parts of Code Written with AI Assistance
 
 1. **ai.c - Computer AI Logic**
    - `minimax()` function - Minimax algorithm with alpha-beta pruning
@@ -74,9 +69,7 @@ This document describes how AI tools were used in the development of this Connec
 
 ---
 
-## הבנת הקוד
-
-### Understanding the code:
+## Understanding the Code
 
 All code provided by AI was thoroughly reviewed and understood:
 
@@ -90,7 +83,7 @@ All code provided by AI was thoroughly reviewed and understood:
 
 ---
 
-## הערות נוספות
+## Additional Notes
 
 - All AI-generated code was tested and verified
 - Code was modified where needed to fit project requirements
@@ -102,4 +95,3 @@ All code provided by AI was thoroughly reviewed and understood:
 **Date:** January 2026  
 **Course:** Introduction to Computer Science  
 **Institution:** Holon Institute of Technology
-

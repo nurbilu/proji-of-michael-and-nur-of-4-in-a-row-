@@ -66,12 +66,8 @@ gcc -o connect4.exe main.c board.c game.c ai.c ui.c stats.c
 
 ## Requirements
 
-- Windows OS (uses Windows Console API for colors)
 - C compiler (Visual Studio or GCC)
 
-## Authors
-
-[Student Names Here]
 
 ## Course
 
