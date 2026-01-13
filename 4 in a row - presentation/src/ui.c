@@ -8,6 +8,22 @@
 #include <windows.h>
 #include "../include/ui.h"
 
+/* Clears remaining characters from input buffer */
+static void clearInputBuffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+        /* Discard characters until newline */
+    }
+}
+
+/* Reads an integer from user input, returns 1 on success, 0 on failure */
+static int readInteger(int* value) {
+    int result;
+    result = scanf("%d", value);
+    clearInputBuffer();
+    return (result == 1);
+}
+
 /* Clears the console screen */
 void clearScreen(void) {
     system("cls");
@@ -120,7 +136,6 @@ void displayDifficultyMenu(void) {
 int getPlayerMove(int board[ROWS][COLS], int player) {
     int col;
     int valid = 0;
-    char buffer[100];
     
     while (!valid) {
         if (player == PLAYER1) {
@@ -133,29 +148,27 @@ int getPlayerMove(int board[ROWS][COLS], int player) {
         setColor(COLOR_DEFAULT);
         printf(" - Enter column (1-7): ");
         
-        /* Read input safely */
-        if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
-            if (sscanf(buffer, "%d", &col) == 1) {
-                col--;  /* Convert to 0-indexed */
-                
-                if (col >= 0 && col < COLS) {
-                    if (isValidMove(board, col)) {
-                        valid = 1;
-                    } else {
-                        setColor(COLOR_RED);
-                        printf("  Column is full! Try another.\n");
-                        setColor(COLOR_DEFAULT);
-                    }
+        /* Read integer using scanf with buffer clearing */
+        if (readInteger(&col)) {
+            col--;  /* Convert to 0-indexed */
+            
+            if (col >= 0 && col < COLS) {
+                if (isValidMove(board, col)) {
+                    valid = 1;
                 } else {
                     setColor(COLOR_RED);
-                    printf("  Invalid column! Enter 1-7.\n");
+                    printf("  Column is full! Try another.\n");
                     setColor(COLOR_DEFAULT);
                 }
             } else {
                 setColor(COLOR_RED);
-                printf("  Invalid input! Enter a number 1-7.\n");
+                printf("  Invalid column! Enter 1-7.\n");
                 setColor(COLOR_DEFAULT);
             }
+        } else {
+            setColor(COLOR_RED);
+            printf("  Invalid input! Enter a number 1-7.\n");
+            setColor(COLOR_DEFAULT);
         }
     }
     
@@ -185,22 +198,20 @@ void displayTieMessage(void) {
 
 /* Waits for user to press Enter */
 void waitForEnter(void) {
-    char buffer[100];
     printf("  Press Enter to continue...");
-    fgets(buffer, sizeof(buffer), stdin);
+    while (getchar() != '\n') {
+        /* Wait for Enter key */
+    }
 }
 
 /* Gets a valid menu choice from user */
 int getMenuChoice(int min, int max) {
     int choice;
-    char buffer[100];
     
     while (1) {
-        if (fgets(buffer, sizeof(buffer), stdin) != NULL) {
-            if (sscanf(buffer, "%d", &choice) == 1) {
-                if (choice >= min && choice <= max) {
-                    return choice;
-                }
+        if (readInteger(&choice)) {
+            if (choice >= min && choice <= max) {
+                return choice;
             }
         }
         setColor(COLOR_RED);

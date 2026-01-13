@@ -6,7 +6,7 @@ This document describes how AI tools were used in the development of this Connec
 
 ## AI Tools Used
 
-### 1. Claude (Cursor IDE)
+### 1. Claude Opus 4.5
 - **Purpose**: Help with project planning and development
 
 ---
