@@ -49,7 +49,10 @@ This is a Connect Four (4 in a Row) game implemented in C. The game runs in the 
 | `getMediumMove()` | Returns smart move (Medium) |
 | `getHardMove()` | Returns best move using Minimax (Hard) |
 | `getAIMove()` | Main AI function by difficulty |
-| `minimax()` | Minimax algorithm with alpha-beta |
+| `minimaxAlgorithm()` | Minimax algorithm with alpha-beta |
+| `calculatePositionScore()` | Calculates score for board position |
+| `evaluateBoardState()` | Evaluates overall board state |
+| `countDiscsInDirection()` | Counts consecutive discs in direction |
 
 ### ui.c - User Interface
 
@@ -60,9 +63,12 @@ This is a Connect Four (4 in a Row) game implemented in C. The game runs in the 
 | `displayBoard()` | Shows colored game board |
 | `displayMainMenu()` | Shows main menu |
 | `displayDifficultyMenu()` | Shows difficulty menu |
+| `displayTitle()` | Shows game title banner |
 | `getPlayerMove()` | Gets valid input from player |
+| `getMenuChoice()` | Gets valid menu choice from user |
 | `displayWinMessage()` | Shows win message |
 | `displayTieMessage()` | Shows tie message |
+| `waitForEnter()` | Waits for user to press Enter |
 
 ### stats.c - Statistics
 

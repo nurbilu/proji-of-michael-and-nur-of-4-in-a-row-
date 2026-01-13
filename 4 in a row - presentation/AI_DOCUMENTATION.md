@@ -51,8 +51,9 @@ This document describes how AI tools were used in the development of this Connec
 ## Parts of Code Written with AI Assistance
 
 1. **ai.c - Computer AI Logic**
-   - `minimax()` function - Minimax algorithm with alpha-beta pruning
-   - `evaluatePosition()` function - Position scoring heuristic
+   - `minimaxAlgorithm()` function - Minimax algorithm with alpha-beta pruning
+   - `evaluateBoardState()` function - Board state evaluation heuristic
+   - `calculatePositionScore()` function - Position scoring heuristic
    - `getMediumMove()` function - Smart move selection
 
 2. **game.c - Win Detection**
@@ -73,7 +74,7 @@ This document describes how AI tools were used in the development of this Connec
 
 All code provided by AI was thoroughly reviewed and understood:
 
-1. **Minimax Algorithm**: Recursive algorithm that evaluates all possible game states to find the optimal move. Uses alpha-beta pruning to eliminate unnecessary branches.
+1. **Minimax Algorithm** (`minimaxAlgorithm()`): Recursive algorithm that evaluates all possible game states to find the optimal move. Uses alpha-beta pruning to eliminate unnecessary branches.
 
 2. **Win Detection**: Checks all possible 4-in-a-row combinations by iterating through the board with appropriate bounds.
 

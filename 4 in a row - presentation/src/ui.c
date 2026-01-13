@@ -8,22 +8,6 @@
 #include <windows.h>
 #include "../include/ui.h"
 
-/* Clears remaining characters from input buffer */
-static void clearInputBuffer(void) {
-    int c;
-    while ((c = getchar()) != '\n' && c != EOF) {
-        /* Discard characters until newline */
-    }
-}
-
-/* Reads an integer from user input, returns 1 on success, 0 on failure */
-static int readInteger(int* value) {
-    int result;
-    result = scanf("%d", value);
-    clearInputBuffer();
-    return (result == 1);
-}
-
 /* Clears the console screen */
 void clearScreen(void) {
     system("cls");
@@ -136,6 +120,8 @@ void displayDifficultyMenu(void) {
 int getPlayerMove(int board[ROWS][COLS], int player) {
     int col;
     int valid = 0;
+    int result;
+    int c;
     
     while (!valid) {
         if (player == PLAYER1) {
@@ -148,8 +134,15 @@ int getPlayerMove(int board[ROWS][COLS], int player) {
         setColor(COLOR_DEFAULT);
         printf(" - Enter column (1-7): ");
         
-        /* Read integer using scanf with buffer clearing */
-        if (readInteger(&col)) {
+        /* Read number from user using scanf_s for Visual Studio */
+        result = scanf_s("%d", &col);
+        
+        /* Clear remaining characters in input buffer */
+        while ((c = getchar()) != '\n' && c != EOF) {
+            /* Discard extra characters */
+        }
+        
+        if (result == 1) {
             col--;  /* Convert to 0-indexed */
             
             if (col >= 0 && col < COLS) {
@@ -207,13 +200,24 @@ void waitForEnter(void) {
 /* Gets a valid menu choice from user */
 int getMenuChoice(int min, int max) {
     int choice;
+    int result;
+    int c;
     
     while (1) {
-        if (readInteger(&choice)) {
+        /* Read number from user using scanf_s for Visual Studio */
+        result = scanf_s("%d", &choice);
+        
+        /* Clear remaining characters in input buffer */
+        while ((c = getchar()) != '\n' && c != EOF) {
+            /* Discard extra characters */
+        }
+        
+        if (result == 1) {
             if (choice >= min && choice <= max) {
                 return choice;
             }
         }
+        
         setColor(COLOR_RED);
         printf("  Invalid choice! Enter %d-%d: ", min, max);
         setColor(COLOR_DEFAULT);
