@@ -71,6 +71,5 @@ gcc -o connect4.exe main.c board.c game.c ai.c ui.c stats.c
 
 ## Course
 
-Introduction to Computer Science - Fall 2025
-Holon Institute of Technology
+Introduction to Computer Science - Holon Institute of Technology
 
