@@ -16,6 +16,7 @@ A console-based Connect Four game developed in C for the Introduction to Compute
 
 ## Project Structure
 
+### Development Code
 ```
 4 in a row - dev code/
 ├── main.c          # Entry point and main menu
@@ -27,6 +28,29 @@ A console-based Connect Four game developed in C for the Introduction to Compute
 ├── README.md       # This file
 ├── AI_DOCUMENTATION.md  # AI tool usage documentation
 └── ABOUT.md        # General software explanation
+```
+
+### Presentation Code (Visual Studio Project)
+```
+4 in a row - presentation/
+├── ConnectFour.sln         # Visual Studio solution file
+├── ConnectFour.vcxproj     # Visual Studio project file
+├── include/                # Header files
+│   ├── ai.h
+│   ├── board.h
+│   ├── game.h
+│   ├── stats.h
+│   └── ui.h
+├── src/                    # Source files
+│   ├── main.c
+│   ├── board.c
+│   ├── game.c
+│   ├── ai.c
+│   ├── ui.c
+│   └── stats.c
+├── README.md
+├── AI_DOCUMENTATION.md
+└── ABOUT.md
 ```
 
 ## How to Compile
@@ -42,7 +66,7 @@ A console-based Connect Four game developed in C for the Introduction to Compute
 ### Using Command Line (GCC)
 
 ```bash
-gcc -o connect4.exe main.c board.c game.c ai.c ui.c stats.c
+gcc -I include -o connect4.exe src/main.c src/board.c src/game.c src/ai.c src/ui.c src/stats.c
 ```
 
 ## How to Play
