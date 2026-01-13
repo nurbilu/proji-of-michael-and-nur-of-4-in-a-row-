@@ -78,5 +78,4 @@ gcc -I include -o connect4.exe src/main.c src/board.c src/game.c src/ai.c src/ui
 
 ## Course
 
-Introduction to Computer Science - Fall 2025
-Holon Institute of Technology
+Introduction to Computer Science - Holon Institute of Technology
