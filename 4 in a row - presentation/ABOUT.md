@@ -132,14 +132,5 @@ The file is loaded on program start and saved after each game.
 
 ---
 
-## Technical Notes
-
-- Uses Windows Console API for colored output
-- Safe input handling with `fgets()` and `sscanf()`
-- Modular code structure for maintainability
-- All functions have clear single responsibilities
-
----
-
 **Version:** 1.0  
 **Date:** January 2026
